@@ -5,7 +5,7 @@ import {
   scryRenderedDOMComponentsWithTag,
   Simulate
 } from "react-addons-test-utils";
-import Voting from "../Voting";
+import { Voting } from "../Voting";
 import { List } from "immutable";
 
 describe("Voting", () => {
