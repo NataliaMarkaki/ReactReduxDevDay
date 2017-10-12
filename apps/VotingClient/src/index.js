@@ -1,8 +1,10 @@
-import Example from "./example/Example";
-import "./index.scss";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Voting from './Voting/Voting';
 
-console.log(new Example().sayHello());
+const pair = ['Trainspotting', '28 Days Later'];
 
-if (module.hot) {
-  module.hot.accept();
-}
+ReactDOM.render(
+  <Voting pair={pair} hasVoted="Trainspotting"/>,
+  document.getElementById('app')
+);
