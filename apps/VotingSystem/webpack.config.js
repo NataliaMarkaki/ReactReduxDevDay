@@ -1,9 +1,11 @@
 const { webpackConfigGenerator } = require("@caplin/webpack-config-app");
 
 module.exports = function createWebpackConfig() {
-  const webpackConfig = webpackConfigGenerator({
+  let webpackConfig = webpackConfigGenerator({
     basePath: __dirname
   });
+
+  webpackConfig.node = { fs: "empty" };
 
   return webpackConfig;
 };
