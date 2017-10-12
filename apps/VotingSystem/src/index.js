@@ -1,8 +1,3 @@
-import Example from "./example/Example";
-import "./index.scss";
+import makeStore from './store/store';
 
-console.log(new Example().sayHello());
-
-if (module.hot) {
-  module.hot.accept();
-}
+export const store = makeStore();
