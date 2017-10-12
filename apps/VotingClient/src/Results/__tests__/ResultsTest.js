@@ -6,7 +6,7 @@ import {
 } from "react-addons-test-utils";
 import ReactDOM from "react-dom";
 import { List, Map } from "immutable";
-import Results from "../Results";
+import { Results } from "../Results";
 
 describe("Results", () => {
   it("renders entries with vote counts or zero", () => {
@@ -36,14 +36,16 @@ describe("Results", () => {
     expect(nextInvoked).toBe(true);
   });
 
-  it('renders the winner when there is one', () => {
+  it("renders the winner when there is one", () => {
     const component = renderIntoDocument(
-      <Results winner="Trainspotting"
-               pair={["Trainspotting", "28 Days Later"]}
-               tally={Map()} />
+      <Results
+        winner="Trainspotting"
+        pair={["Trainspotting", "28 Days Later"]}
+        tally={Map()}
+      />
     );
     const winner = ReactDOM.findDOMNode(component.refs.winner);
     expect(winner).toBeTruthy;
-    expect(winner.textContent).toContain('Trainspotting');
+    expect(winner.textContent).toContain("Trainspotting");
   });
 });
